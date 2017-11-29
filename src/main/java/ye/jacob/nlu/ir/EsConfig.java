@@ -22,23 +22,6 @@ public class EsConfig {
     @Value("${elasticsearch.cluster-nodes}")
     private String esClusterNodes;
 
-//    @Bean
-//    public Client client() throws Exception {
-//        Settings esSettings = Settings.settingsBuilder()
-//                .put("cluster.name", "ir")
-//                .build();
-//        return TransportClient.builder()
-//                .settings(esSettings)
-//                .build()
-//                .addTransportAddress(
-//                        new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9400));
-//    }
-//
-//    @Bean
-//    public ElasticsearchOperations elasticsearchTemplate() throws Exception {
-//        return new ElasticsearchTemplate(client());
-//    }
-
     @Bean
     public TransportClient client() throws UnknownHostException {
         System.out.println("esCluster:" + esClusterName + " /// esNode:" + esClusterNodes);
